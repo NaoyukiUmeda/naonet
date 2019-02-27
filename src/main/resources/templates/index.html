@@ -1,0 +1,25 @@
+<div xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/base" th:with="page='naonet',title=''">
+
+  <th:block layout:fragment="style">
+  </th:block>
+
+  <th:block layout:fragment="page-header">
+    <div class="page-header">
+      <div class="header-wrap flexible-space-between">
+        <h1 class="page-title"></h1>
+      </div>
+    </div>
+  </th:block>
+
+  <th:block layout:fragment="page-main">
+    <div class="page-main">
+    Hello
+    </div>
+  </th:block>
+
+  <th:block layout:fragment="script">
+    <script th:inline="javascript">
+    </script>
+ 
+  </th:block>
+</div>

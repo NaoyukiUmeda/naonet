@@ -23,3 +23,12 @@
 /nbdist/
 /.nb-gradle/
 /build/
+
+# Node
+node_modules
+
+# Sass
+.sass-cache/
+
+assets/
+src/main/resources/static/test/
