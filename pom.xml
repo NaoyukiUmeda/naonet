@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>nao.net</groupId>
 	<artifactId>web</artifactId>
-	<version>0.0.1-war</version>
+	<version>0.0.1-jar</version>
 	<name>naonetweb</name>
 	<description>naonet start project</description>
 

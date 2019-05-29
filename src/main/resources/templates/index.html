@@ -1,25 +1,175 @@
-<div xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout/base" th:with="page='naonet',title=''">
+<!DOCTYPE html>
+<html lang="ja" class="index">
 
-  <th:block layout:fragment="style">
-  </th:block>
+<head>
+  <meta http-equiv="Content-Language" content="ja" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript charset=utf-8" />
+  <meta http-equiv="imagetoolbar" content="false" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <title></title>
+</head>
 
-  <th:block layout:fragment="page-header">
-    <div class="page-header">
-      <div class="header-wrap flexible-space-between">
-        <h1 class="page-title"></h1>
+<th:block layout:fragment="style">
+  <link rel="stylesheet" th:href="@{'/assets/stylesheets/application.css'}">
+  <link rel="stylesheet" th:href="@{'/assets/stylesheets/style.css'}">
+</th:block>
+
+<th:block layout:fragment="page-header">
+  <div class="page-header">
+    <!-- <h1 class="page-title">ハロー</h1> -->
+  </div>
+</th:block>
+
+<th:block layout:fragment="page-main">
+  <div class="page-main" id="page-main">
+    <div class="content" name="1">
+      <div class="name-wrap">
+        <svg version="1.1" class="layer1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 267.67 87.76"
+          style="enable-background:new 0 0 267.67 87.76;" xml:space="preserve">
+          <switch>
+            <foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+              <i:pgfRef xlink:href="#adobe_illustrator_pgf">
+              </i:pgfRef>
+            </foreignObject>
+            <g i:extraneous="self">
+              <g>
+                <path class="path_black" fill="none" stroke="#464646" d="M7.8,14.4V63H5.7V8.2l39.7,49.3V9h2.1v54.8L7.8,14.4z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M64.4,61.5c-2.6-1.5-4.7-3.6-6.3-6.2c-1.5-2.6-2.3-5.4-2.3-8.5c0-3,0.8-5.8,2.3-8.5c1.5-2.6,3.6-4.7,6.3-6.2
+  c2.6-1.5,5.5-2.3,8.6-2.3c3.1,0,6.1,0.8,8.9,2.5c2.8,1.7,4.7,3.8,5.8,6.4v-8.1H90V63h-2.3v-8.1c-1.3,2.7-3.3,4.8-6,6.4
+  C79,63,76.1,63.8,73,63.8C69.9,63.8,67.1,63,64.4,61.5z M80.5,59.7c2.3-1.4,4-3.2,5.4-5.5c1.3-2.3,2-4.8,2-7.5c0-2.6-0.7-5.1-2-7.4
+  c-1.3-2.3-3.1-4.1-5.4-5.5c-2.3-1.4-4.7-2.1-7.3-2.1c-2.6,0-5.1,0.7-7.4,2.1c-2.3,1.4-4.1,3.2-5.5,5.5c-1.4,2.3-2.1,4.8-2.1,7.4
+  c0,2.6,0.7,5.1,2.1,7.4c1.4,2.3,3.2,4.1,5.5,5.5c2.3,1.4,4.8,2.1,7.4,2.1C75.8,61.8,78.2,61.1,80.5,59.7z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M105.6,61.7c-2.6-1.6-4.7-3.7-6.2-6.4c-1.5-2.7-2.2-5.6-2.2-8.7c0-3.1,0.8-5.9,2.3-8.6c1.5-2.6,3.6-4.7,6.2-6.3
+  c2.6-1.6,5.5-2.3,8.7-2.3c3.2,0,6.1,0.8,8.7,2.3c2.6,1.6,4.7,3.7,6.2,6.3c1.5,2.6,2.2,5.5,2.2,8.6c0,3.2-0.7,6.2-2.2,8.8
+  c-1.4,2.7-3.4,4.8-6,6.3c-2.6,1.6-5.5,2.3-8.8,2.3C111.2,64.2,108.3,63.3,105.6,61.7z M122,60c2.3-1.4,4-3.3,5.3-5.6
+  c1.3-2.3,1.9-4.9,1.9-7.7c0-2.7-0.6-5.3-1.9-7.6c-1.3-2.4-3.1-4.2-5.3-5.6c-2.3-1.4-4.8-2.1-7.5-2.1s-5.2,0.7-7.5,2.1
+  c-2.3,1.4-4.1,3.3-5.4,5.7c-1.3,2.4-2,4.9-2,7.6s0.7,5.3,2,7.6c1.3,2.3,3.1,4.2,5.4,5.6c2.3,1.4,4.8,2.1,7.6,2.1
+  C117.2,62.1,119.7,61.4,122,60z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M139.3,71.6v-3.7c1.6,2.5,3.4,4.4,5.4,5.6s4.4,1.8,7.1,1.8c2.7,0,5.1-0.6,7-1.7c1.9-1.2,3.4-2.7,4.4-4.7
+  c1-2,1.5-4.2,1.5-6.7v-5.5c-1.2,2.3-2.9,4-5.2,5.2c-2.3,1.2-4.9,1.8-7.6,1.8c-2.7,0-5.2-0.6-7.3-1.8c-2.1-1.2-3.8-2.9-4.9-5
+  c-1.2-2.2-1.8-4.7-1.8-7.5V30.6h2.3v18.9c0,2.6,0.5,4.8,1.6,6.7c1.1,1.8,2.5,3.3,4.3,4.2c1.8,1,3.7,1.4,5.8,1.4
+  c2.3,0,4.4-0.6,6.4-1.7c2-1.1,3.5-2.6,4.6-4.5c1.1-1.9,1.7-3.9,1.7-6.1V30.6h2.3V62c0,2.9-0.6,5.5-1.8,7.8
+  c-1.2,2.3-2.9,4.2-5.1,5.5c-2.3,1.3-4.9,2-8.1,2C146.7,77.3,142.4,75.4,139.3,71.6z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M179.1,60c-2.5-2.5-3.7-6-3.7-10.6V30.6h2.3v18.9c0,3.9,1,7,3.1,9.1c2.1,2.1,5,3.2,8.8,3.2c2.3,0,4.4-0.5,6.3-1.5
+  c1.9-1,3.4-2.5,4.5-4.4c1.1-1.9,1.7-4,1.7-6.4V30.6h2.3V63h-2.3v-6c-1.1,2-2.8,3.7-5,4.9c-2.2,1.3-4.7,1.9-7.6,1.9
+  C185.1,63.8,181.6,62.5,179.1,60z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M213.6,9.1h2.3v32.7l12.8-11.2h3l-14.8,13L235.4,63h-3.1l-16.4-17.3V63h-2.3V9.1z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M241.7,22.5c-0.5-0.5-0.8-1.1-0.8-1.8c0-0.7,0.3-1.2,0.8-1.7c0.5-0.5,1.1-0.7,1.8-0.7c0.7,0,1.3,0.2,1.8,0.7
+  c0.5,0.5,0.8,1.1,0.8,1.7c0,0.7-0.3,1.3-0.8,1.8c-0.5,0.5-1.1,0.7-1.8,0.7C242.8,23.2,242.2,22.9,241.7,22.5z M242.3,30.6h2.3V63
+  h-2.3V30.6z" />
+              </g>
+              <polygon style="fill:none;" points="603.57,175 620.24,175 620.24,175 603.57,175 		" />
+            </g>
+          </switch>
+        </svg>
+        <svg version="1.1" class="layer2" id="Layer_2" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 267.67 87.76"
+          style="enable-background:new 0 0 267.67 87.76;" xml:space="preserve">
+          <switch>
+            <foreignObject requiredExtensions="&ns_ai;" x="0" y="0" width="1" height="1">
+              <i:pgfRef xlink:href="#adobe_illustrator_pgf">
+              </i:pgfRef>
+            </foreignObject>
+            <g i:extraneous="self">
+              <g>
+                <path class="path_black" fill="none" stroke="#464646" d="M13.5,62.5c-2.4-1.3-4.4-3.2-5.8-5.7c-1.4-2.4-2.1-5.3-2.1-8.6V9h2.4v39.2c0,2.9,0.6,5.4,1.8,7.5c1.2,2.1,2.8,3.8,4.9,4.9
+		s4.4,1.7,7,1.7c2.6,0,4.9-0.6,7-1.7c2.1-1.1,3.7-2.8,4.9-4.9c1.2-2.1,1.8-4.7,1.8-7.6V9h2.4v39.1c0,3.3-0.7,6.2-2,8.7
+		c-1.3,2.5-3.2,4.4-5.7,5.7c-2.4,1.3-5.2,2-8.3,2C18.8,64.4,16,63.8,13.5,62.5z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M48.1,30.6h2.3v4.9c2.2-3.8,5.8-5.7,10.7-5.7c2.4,0,4.4,0.7,6.1,2c1.7,1.3,2.9,3.3,3.6,5.9c0.6-2.4,2-4.3,4.1-5.7
+		c2.1-1.5,4.5-2.2,7.2-2.2c3.5,0,6.2,1,8.1,3.1c1.9,2,2.9,4.9,2.9,8.7V63h-2.3V41.5c0-3-0.8-5.4-2.3-7.1c-1.6-1.7-3.6-2.6-6.2-2.6
+		c-1.9,0-3.7,0.5-5.3,1.4c-1.6,0.9-2.9,2.2-3.9,3.8c-1,1.6-1.4,3.3-1.4,5.3V63h-2.3V42.8c0-3.5-0.8-6.2-2.4-8.1
+		c-1.6-1.9-3.7-2.9-6.3-2.9c-1.7,0-3.4,0.4-4.9,1.3c-1.6,0.9-2.8,2-3.8,3.5c-1,1.5-1.5,3.1-1.5,4.8V63h-2.3V30.6z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M125.1,59.9c2.3-1.3,4.1-3.1,5.6-5.3v3.7c-1.8,2-3.7,3.4-5.8,4.3c-2.1,0.9-4.5,1.3-7.2,1.3c-3,0-5.8-0.8-8.4-2.4
+		c-2.6-1.6-4.7-3.7-6.3-6.3c-1.6-2.6-2.3-5.4-2.3-8.4c0-3.2,0.8-6.1,2.3-8.7c1.5-2.6,3.6-4.6,6.3-6s5.6-2.2,8.9-2.2
+		c5,0,9.2,2,12.7,5.9l-22.6,22.3c1.6,1.3,3.1,2.2,4.6,2.8c1.5,0.6,3.2,0.9,5,0.9C120.5,61.8,122.9,61.2,125.1,59.9z M107,56.7
+		l21.1-21c-1.6-1.4-3.1-2.4-4.6-3c-1.5-0.6-3.3-0.9-5.3-0.9c-2.9,0-5.5,0.6-7.8,1.9c-2.3,1.3-4.1,3-5.4,5.2
+		c-1.3,2.2-1.9,4.7-1.9,7.5C103,50.5,104.4,53.9,107,56.7z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M144.8,61.5c-2.6-1.5-4.7-3.6-6.2-6.2c-1.5-2.6-2.3-5.4-2.3-8.5c0-3.1,0.8-5.9,2.3-8.5c1.5-2.6,3.6-4.7,6.2-6.2
+		c2.6-1.5,5.5-2.3,8.6-2.3c3,0,5.9,0.8,8.6,2.4c2.7,1.6,4.8,3.7,6,6.3V9h2.3v54h-2.3v-7.8c-1.4,2.6-3.5,4.7-6.2,6.3
+		c-2.7,1.6-5.5,2.4-8.5,2.4C150.3,63.8,147.4,63,144.8,61.5z M160.7,59.7c2.3-1.4,4.1-3.2,5.5-5.5c1.4-2.3,2.1-4.7,2.1-7.4
+		c0-2.6-0.7-5.1-2.1-7.4c-1.4-2.3-3.2-4.2-5.5-5.5c-2.3-1.4-4.7-2.1-7.4-2.1c-2.6,0-5.1,0.7-7.3,2.1c-2.3,1.4-4.1,3.2-5.4,5.5
+		c-1.3,2.3-2,4.8-2,7.4c0,2.7,0.7,5.2,2,7.5c1.3,2.3,3.1,4.1,5.4,5.5c2.3,1.4,4.7,2.1,7.4,2.1C156,61.8,158.5,61.1,160.7,59.7z" />
+                <path class="path_black" fill="none" stroke="#464646" d="M186.2,61.5c-2.6-1.5-4.7-3.6-6.3-6.2c-1.5-2.6-2.3-5.4-2.3-8.5c0-3,0.8-5.8,2.3-8.5c1.5-2.6,3.6-4.7,6.3-6.2
+		c2.6-1.5,5.5-2.3,8.6-2.3c3.1,0,6.1,0.8,8.9,2.5c2.8,1.7,4.7,3.8,5.8,6.4v-8.1h2.3V63h-2.3v-8.1c-1.3,2.7-3.3,4.8-6,6.4
+		c-2.7,1.6-5.6,2.4-8.7,2.4C191.7,63.8,188.8,63,186.2,61.5z M202.2,59.7c2.3-1.4,4-3.2,5.4-5.5c1.3-2.3,2-4.8,2-7.5
+		c0-2.6-0.7-5.1-2-7.4c-1.3-2.3-3.1-4.1-5.4-5.5c-2.3-1.4-4.7-2.1-7.3-2.1c-2.6,0-5.1,0.7-7.4,2.1c-2.3,1.4-4.1,3.2-5.5,5.5
+		c-1.4,2.3-2.1,4.8-2.1,7.4c0,2.6,0.7,5.1,2.1,7.4c1.4,2.3,3.2,4.1,5.5,5.5c2.3,1.4,4.8,2.1,7.4,2.1C197.5,61.8,200,61.1,202.2,59.7
+		z" />
+              </g>
+              <polygon style="fill:none;" points="603.57,175 620.24,175 620.24,175 603.57,175 		" />
+            </g>
+          </switch>
+        </svg>
       </div>
     </div>
-  </th:block>
-
-  <th:block layout:fragment="page-main">
-    <div class="page-main">
-    Hello
+    <ul class="content" name="2">
+      <li class="page-icon-wrap">
+        <div class="page-icon page1"></div>
+        <div class="btn-wrap cd-modal-trigger">
+          <div class="btn btn-one">
+            <span>BUTTON ONE</span>
+          </div>
+        </div>
+      </li>
+      <li class="page-icon-wrap">
+        <div class="page-icon page2"></div>
+        <div class="btn-wrap cd-modal-trigger">
+          <div class="btn btn-three">
+            <span>BUTTON THREE</span>
+          </div>
+        </div>
+      </li>
+      <li class="page-icon-wrap">
+        <div class="page-icon page2"></div>
+        <div class="btn-wrap cd-modal-trigger">
+          <div class="btn btn-four">
+            <span>BUTTON FOUR</span>
+          </div>
+        </div>
+        <!-- <a href="#0" class="cd-btn cd-modal-trigger">Start Effect</a> -->
+      </li>
+    </ul>
+  </div>
+  <div id="loader-bg">
+    <div id="loader">
+      <!-- <img src="img-loading.gif" width="80" height="80" alt="Now Loading..." /> -->
+      <div class="fingerprint-spinner">
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+        <div class="spinner-ring"></div>
+      </div>
+      <p>Now Loading...</p>
     </div>
-  </th:block>
+  </div>
+  <div class="cd-modal">
+    <div class="modal-content">
+      
+    </div>
+    <div class="modal-close">Close</div>
+  </div>
+  <div class="cd-transition-layer">
+    <div class="bg-layer"></div>
+  </div>
+</th:block>
 
-  <th:block layout:fragment="script">
-    <script th:inline="javascript">
-    </script>
- 
-  </th:block>
-</div>
+<th:block layout:fragment="script">
+  <script th:inline="javascript">
+  </script>
+  <script th:src="@{'/assets/javascripts/index.js'}"></script>
+  <script th:src="@{'/assets/javascripts/modernizr.js'}"></script>
+</th:block>
+
+</html>

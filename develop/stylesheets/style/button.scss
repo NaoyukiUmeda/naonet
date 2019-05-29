@@ -1,0 +1,135 @@
+$btn-width: 200px;
+$btn-height: 50px;
+
+div[class*=container] {
+  text-align: center;
+  width: 100%;
+  height: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-around;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.49);
+}
+
+.btn-wrap {
+  width: 100%;
+}
+
+.btn {
+  position: relative;
+  color: white;
+  width: $btn-width;
+  height: $btn-height;
+  line-height: $btn-height;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  span {
+    transition: all 0.3s;
+    tranform: scale(1, 1);
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  &:after {
+    width: calc(#{$btn-width} - 2px);
+    height: calc(#{$btn-height} - 2px);
+  }
+}
+
+.btn-one {
+  &:before {
+    z-index: 1;
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 1);
+  }
+
+  &:after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    &:after {
+      transform: scale(1, .1);
+      opacity: 0;
+    }
+  }
+}
+/* BTN THREE */
+.btn-three {
+  &:before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1, 0.1);
+  }
+
+  &:after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    &:after {
+      transform: scale(1, .1);
+      opacity: 0;
+    }
+  }
+}
+/* BTN FOUR */
+.btn-four {
+  &:before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 0.1);
+  }
+
+  &:after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &:hover {
+    span {
+      transform: scale(1.2, 1.2);
+    }
+
+    &:before {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+
+    &:after {
+      transform: scale(0, 0);
+      opacity: 0;
+    }
+  }
+}

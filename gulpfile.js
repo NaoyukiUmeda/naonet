@@ -6,6 +6,7 @@ const $webpack = require('webpack-stream');
 const webpackConfig = require("./webpack.config");
 const $postcss = require('gulp-postcss');
 const sass = require('postcss-node-sass');
+const $sass = require('gulp-sass');
 const cssimport = require("postcss-import");
 const autoprefixer = require('autoprefixer');
 const cssdeclsort = require('css-declaration-sorter');
@@ -16,16 +17,19 @@ const $sourcemaps = require('gulp-sourcemaps');
 const $webserver = require('gulp-webserver');
 const assemble = require('assemble');
 const $extname = require('gulp-extname');
+const bourbon = require('node-bourbon');
+const neat = require('node-neat');
 
 const DEV_DIR = 'develop';
 const DIST_DIR = 'src/main/resources/static';
 const DIST_ASSETS_DIR = DIST_DIR + '/assets';
 let isDevelopment = true;
-
 const app = assemble();
 
+// bourbon.with(`${DIST_ASSETS_DIR}/stylesheets`);
+
 $.task('script', () => {
-  
+
   return $.src([
       `${DEV_DIR}/javascripts/entry/*.js`
     ])
@@ -69,6 +73,9 @@ $.task('style', () => {
     }))
     .pipe($if(isDevelopment, $sourcemaps.init()))
     .pipe($postcss(plugins))
+    .pipe($sass({
+      includePaths: bourbon.with(neat.includePaths)
+    }))
     .pipe($rename({
       extname: '.css'
     }))
@@ -108,7 +115,7 @@ $.task('watch', () => {
 });
 
 $.task('develop', $.series($.parallel([
- 'script', 'style', 'image', 'font'
-]), $.parallel([/*'webserver', */'watch'])));
+  'script', 'style', 'image', 'font'
+]), $.parallel([ /*'webserver', */ 'watch'])));
 
 $.task('default', $.series('develop'));

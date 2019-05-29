@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(value = { "/" })
-public class SubmergeListController {
+public class IndexController {
 
 	@GetMapping
 	public ModelAndView get() {
