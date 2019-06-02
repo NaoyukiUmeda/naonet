@@ -1,4 +1,4 @@
-$btn-width: 200px;
+$btn-width: 140px;
 $btn-height: 50px;
 
 div[class*=container] {
@@ -10,7 +10,6 @@ div[class*=container] {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-content: space-around;
 }
 
@@ -18,18 +17,18 @@ div[class*=container] {
   background: rgba(0, 0, 0, 0.49);
 }
 
-.btn-wrap {
-  width: 100%;
-}
-
 .btn {
   position: relative;
-  color: white;
+  color: #fff;
   width: $btn-width;
   height: $btn-height;
   line-height: $btn-height;
   transition: all 0.3s;
   cursor: pointer;
+  box-shadow: 5px 5px 10px 3px #b8b8b8;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(#000000, 0.41);
 
   span {
     transition: all 0.3s;

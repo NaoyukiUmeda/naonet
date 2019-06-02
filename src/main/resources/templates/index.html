@@ -24,12 +24,12 @@
 
 <th:block layout:fragment="page-header">
   <div class="page-header">
-    <!-- <h1 class="page-title">ハロー</h1> -->
   </div>
 </th:block>
 
 <th:block layout:fragment="page-main">
-  <div class="page-main" id="page-main">
+  <div class="page-main" id="page-main" name="img-0">
+    <div class="background-image img-fade-in"></div>
     <div class="content" name="1">
       <div class="name-wrap">
         <svg version="1.1" class="layer1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 267.67 87.76"
@@ -109,28 +109,28 @@
         </svg>
       </div>
     </div>
-    <ul class="content" name="2">
+    <ul class="content fade" name="2">
       <li class="page-icon-wrap">
-        <div class="page-icon page1"></div>
+
         <div class="btn-wrap cd-modal-trigger">
           <div class="btn btn-one">
-            <span>BUTTON ONE</span>
+            <span>Profile</span>
           </div>
         </div>
       </li>
       <li class="page-icon-wrap">
-        <div class="page-icon page2"></div>
+
         <div class="btn-wrap cd-modal-trigger">
           <div class="btn btn-three">
-            <span>BUTTON THREE</span>
+            <span>Speciality</span>
           </div>
         </div>
       </li>
       <li class="page-icon-wrap">
-        <div class="page-icon page2"></div>
+
         <div class="btn-wrap cd-modal-trigger">
           <div class="btn btn-four">
-            <span>BUTTON FOUR</span>
+            <span>Photographs</span>
           </div>
         </div>
         <!-- <a href="#0" class="cd-btn cd-modal-trigger">Start Effect</a> -->
@@ -156,7 +156,7 @@
   </div>
   <div class="cd-modal">
     <div class="modal-content">
-      
+      <th:block th:include="./profile.html"></th:block>
     </div>
     <div class="modal-close">Close</div>
   </div>

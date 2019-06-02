@@ -5,7 +5,9 @@ import $ from 'jquery';
 
 let a = 10;
 let timeoutID1;
+let nowImageCount = -1;
 
+let changeFlag = 0;
 {
   // console.log(this);
   var btn = document.getElementById('page-main');
@@ -25,6 +27,7 @@ let timeoutID1;
 // 	});
 // };
 $(function() {
+
   // var h = $(window).height();
   // $('#page-main').css('display', 'none');
   // $('#loader-bg ,#loader').height(h);
@@ -39,15 +42,15 @@ window.onload = function() {
   // $('#loader').delay(600).fadeOut(300);
   // $('#page-main').css('display', 'flex');
   stopload()
+
   setTimeout(function() {
     viewAnimeNameWrap()
-
   }, 600);
-	setTimeout(function(){
-		layer1.play(1);
-		layer2.play(1);
-		viewAnimeIcon()
-	},2500);
+  setTimeout(function() {
+    layer1.play(1);
+    layer2.play(1);
+    viewAnimeIcon()
+  }, 2500);
   // .then(
   //   isAuth => {
   //     if (isAuth) {
@@ -75,6 +78,7 @@ function stopload() {
 let layer1;
 let layer2;
 
+
 // function viewAnimeSvg() {
 //   return new Promise((resolve, reject) => {
 //
@@ -82,20 +86,20 @@ let layer2;
 //   });
 // }
 layer1 = new Vivus('Layer_1', {
-	duration: 100,
-	start: 'manual',
-	type: 'delayed',
-	pathTimingFunction: Vivus.EASE_OUT,
+  duration: 100,
+  start: 'manual',
+  type: 'delayed',
+  pathTimingFunction: Vivus.EASE_OUT,
 }, (obj) => {
-	obj.el.classList.add('fill');
+  obj.el.classList.add('fill');
 });
 layer2 = new Vivus('Layer_2', {
-	duration: 100,
-	start: 'manual',
-	type: 'delayed',
-	pathTimingFunction: Vivus.EASE_OUT,
+  duration: 100,
+  start: 'manual',
+  type: 'delayed',
+  pathTimingFunction: Vivus.EASE_OUT,
 }, (obj) => {
-	obj.el.classList.add('fill');
+  obj.el.classList.add('fill');
 });
 
 function viewAnimeNameWrap() {
@@ -121,62 +125,97 @@ function call(e) {
   sayBaz();
 }
 
-var modalTrigger = $('.cd-modal-trigger'),
-	transitionLayer = $('.cd-transition-layer'),
-	transitionBackground = transitionLayer.children(),
-	modalWindow = $('.cd-modal');
+let modalTrigger = $('.cd-modal-trigger'),
+  transitionLayer = $('.cd-transition-layer'),
+  transitionBackground = transitionLayer.children(),
+  modalWindow = $('.cd-modal');
 
-var frameProportion = 1.78, //png frame aspect ratio
-	frames = 25, //number of png frames
-	resize = false;
+let frameProportion = 1.78, //png frame aspect ratio
+  frames = 25, //number of png frames
+  resize = false;
 
 //set transitionBackground dimentions
 setLayerDimensions();
-$(window).on('resize', function(){
-	if( !resize ) {
-		resize = true;
-		(!window.requestAnimationFrame) ? setTimeout(setLayerDimensions, 300) : window.requestAnimationFrame(setLayerDimensions);
-	}
+slideShow();
+$(window).on('resize', function() {
+  if (!resize) {
+    resize = true;
+    (!window.requestAnimationFrame) ? setTimeout(setLayerDimensions, 300): window.requestAnimationFrame(setLayerDimensions);
+  }
 });
 
 //open modal window
-modalTrigger.on('click', function(event){
-	event.preventDefault();
-	transitionLayer.addClass('visible opening');
-	var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
-	setTimeout(function(){
-		modalWindow.addClass('visible');
-	}, delay);
+modalTrigger.on('click', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('visible opening');
+  let delay = ($('.no-cssanimations').length > 0) ? 0 : 600;
+  setTimeout(function() {
+    modalWindow.addClass('visible');
+  }, delay);
 });
 
 //close modal window
-modalWindow.on('click', '.modal-close', function(event){
-	event.preventDefault();
-	transitionLayer.addClass('closing');
-	modalWindow.removeClass('visible');
-	transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
-		transitionLayer.removeClass('closing opening visible');
-		transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
-	});
+modalWindow.on('click', '.modal-close', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('closing');
+  modalWindow.removeClass('visible');
+  transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+    transitionLayer.removeClass('closing opening visible');
+    transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+  });
 });
 
 function setLayerDimensions() {
-	var windowWidth = $(window).width(),
-		windowHeight = $(window).height(),
-		layerHeight, layerWidth;
+  let windowWidth = $(window).width(),
+    windowHeight = $(window).height(),
+    layerHeight, layerWidth;
 
-	if( windowWidth/windowHeight > frameProportion ) {
-		layerWidth = windowWidth;
-		layerHeight = layerWidth/frameProportion;
-	} else {
-		layerHeight = windowHeight*1.2;
-		layerWidth = layerHeight*frameProportion;
-	}
+  if (windowWidth / windowHeight > frameProportion) {
+    layerWidth = windowWidth;
+    layerHeight = layerWidth / frameProportion;
+  } else {
+    layerHeight = windowHeight * 1.2;
+    layerWidth = layerHeight * frameProportion;
+  }
 
-	transitionBackground.css({
-		'width': layerWidth*frames+'px',
-		'height': layerHeight+'px',
-	});
+  transitionBackground.css({
+    'width': layerWidth * frames + 'px',
+    'height': layerHeight + 'px',
+  });
 
-	resize = false;
-}
+  resize = false;
+};
+
+
+function slideShow() {
+
+  // if (nowImageCount < 5) {
+  //   nowImageCount = nowImageCount + 1
+  // } else {
+  //   nowImageCount = 0
+  // }
+  // if (changeFlag == 0) {
+  //   changeFlag = 1;
+  // } else {
+  //   changeFlag = 0;
+  // }
+  //
+  // if (changeFlag == 0) {
+  //   $('#page-main').name = 'img-'+nowImageCount;
+  //   $("#page-main").className = "fadein"
+  //   $("#page-main").className = "fadeout"
+  // } else {
+  //   $('#page-main').name = 'img-'+nowImageCount;
+  //   $("#page-main").className = "fadeout"
+  //   $("#page-main").className = "fadein"
+  // }
+
+  // if(!$('.background-image.img-1').hasClass('none')){
+  //   $('.background-image.img-1').addClass('img-fade-in');
+  //   $('.background-image.img-2').removeClass('none');
+  // }else if(!$('.background-image.img-2').hasClass('none')){
+  //   $('.background-image.img-2').addClass('img-fade-in');
+  //   $('.background-image.img-1').removeClass('none');
+  // }
+  setTimeout(() =>slideShow(), 3000); // 4秒周期に画像を更新する
+};
