@@ -20,6 +20,7 @@
 <th:block layout:fragment="style">
   <link rel="stylesheet" th:href="@{'/assets/stylesheets/application.css'}">
   <link rel="stylesheet" th:href="@{'/assets/stylesheets/style.css'}">
+  <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto:300&display=swap" rel="stylesheet">
 </th:block>
 
 <th:block layout:fragment="page-header">
@@ -111,24 +112,21 @@
     </div>
     <ul class="content fade" name="2">
       <li class="page-icon-wrap">
-
-        <div class="btn-wrap cd-modal-trigger">
+        <div class="btn-wrap cd-modal-trigger profile">
           <div class="btn btn-one">
             <span>Profile</span>
           </div>
         </div>
       </li>
       <li class="page-icon-wrap">
-
-        <div class="btn-wrap cd-modal-trigger">
+        <div class="btn-wrap cd-modal-trigger speciality">
           <div class="btn btn-three">
             <span>Speciality</span>
           </div>
         </div>
       </li>
       <li class="page-icon-wrap">
-
-        <div class="btn-wrap cd-modal-trigger">
+        <div class="btn-wrap cd-modal-trigger photographs">
           <div class="btn btn-four">
             <span>Photographs</span>
           </div>
@@ -154,7 +152,19 @@
       <p>Now Loading...</p>
     </div>
   </div>
-  <div class="cd-modal">
+  <div class="cd-modal profile">
+    <div class="modal-content">
+      <th:block th:include="./profile.html"></th:block>
+    </div>
+    <div class="modal-close">Close</div>
+  </div>
+  <div class="cd-modal speciality">
+    <div class="modal-content">
+      <th:block th:include="./profile.html"></th:block>
+    </div>
+    <div class="modal-close">Close</div>
+  </div>
+  <div class="cd-modal photographs">
     <div class="modal-content">
       <th:block th:include="./profile.html"></th:block>
     </div>

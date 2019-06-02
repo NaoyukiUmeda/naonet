@@ -1,8 +1,15 @@
-.modal-wrap{
-	width: 1000px;
-}
+
 .modal-content{
 	@extend .flexible-center-start;
+	.modal-wrap{
+		width: 1000px;
+		background-color: rgba(#2a2a2a, 0.72);
+		.modal-header{
+			font-size: 25px;
+		  padding-left: 30px;
+		}
+	
+	}
 }
 .modal-close{
 	cursor: pointer;

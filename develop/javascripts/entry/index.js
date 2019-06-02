@@ -5,10 +5,7 @@ import $ from 'jquery';
 
 let a = 10;
 let timeoutID1;
-let nowImageCount = -1;
-
-let changeFlag = 0;
-{
+let changeFlag = 0; {
   // console.log(this);
   var btn = document.getElementById('page-main');
   // btn.addEventListener('click', e => {
@@ -125,10 +122,14 @@ function call(e) {
   sayBaz();
 }
 
-let modalTrigger = $('.cd-modal-trigger'),
+let modalTriggerProfile = $('.cd-modal-trigger.profile'),
+  modalTriggerSpeciality = $('.cd-modal-trigger.speciality'),
+  modalTriggerPhotographs = $('.cd-modal-trigger.photographs'),
   transitionLayer = $('.cd-transition-layer'),
   transitionBackground = transitionLayer.children(),
-  modalWindow = $('.cd-modal');
+  modalWindowProfile = $('.cd-modal.profile'),
+  modalWindowSpeciality= $('.cd-modal.speciality'),
+  modalWindowPhotographs = $('.cd-modal.photographs');
 
 let frameProportion = 1.78, //png frame aspect ratio
   frames = 25, //number of png frames
@@ -136,7 +137,6 @@ let frameProportion = 1.78, //png frame aspect ratio
 
 //set transitionBackground dimentions
 setLayerDimensions();
-slideShow();
 $(window).on('resize', function() {
   if (!resize) {
     resize = true;
@@ -145,26 +145,58 @@ $(window).on('resize', function() {
 });
 
 //open modal window
-modalTrigger.on('click', function(event) {
+modalTriggerProfile.on('click', function(event) {
   event.preventDefault();
   transitionLayer.addClass('visible opening');
   let delay = ($('.no-cssanimations').length > 0) ? 0 : 600;
   setTimeout(function() {
-    modalWindow.addClass('visible');
+    modalWindowProfile.addClass('visible');
   }, delay);
 });
-
+modalTriggerSpeciality.on('click', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('visible opening');
+  let delay = ($('.no-cssanimations').length > 0) ? 0 : 600;
+  setTimeout(function() {
+    modalWindowSpeciality.addClass('visible');
+  }, delay);
+});
+modalTriggerPhotographs.on('click', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('visible opening');
+  let delay = ($('.no-cssanimations').length > 0) ? 0 : 600;
+  setTimeout(function() {
+    modalWindowPhotographs.addClass('visible');
+  }, delay);
+});
 //close modal window
-modalWindow.on('click', '.modal-close', function(event) {
+modalWindowProfile.on('click', '.modal-close', function(event) {
   event.preventDefault();
   transitionLayer.addClass('closing');
-  modalWindow.removeClass('visible');
+  modalWindowProfile.removeClass('visible');
   transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
     transitionLayer.removeClass('closing opening visible');
     transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
   });
 });
-
+modalWindowSpeciality.on('click', '.modal-close', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('closing');
+  modalWindowSpeciality.removeClass('visible');
+  transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+    transitionLayer.removeClass('closing opening visible');
+    transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+  });
+});
+modalWindowPhotographs.on('click', '.modal-close', function(event) {
+  event.preventDefault();
+  transitionLayer.addClass('closing');
+  modalWindowPhotographs.removeClass('visible');
+  transitionBackground.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
+    transitionLayer.removeClass('closing opening visible');
+    transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
+  });
+});
 function setLayerDimensions() {
   let windowWidth = $(window).width(),
     windowHeight = $(window).height(),
@@ -184,38 +216,4 @@ function setLayerDimensions() {
   });
 
   resize = false;
-};
-
-
-function slideShow() {
-
-  // if (nowImageCount < 5) {
-  //   nowImageCount = nowImageCount + 1
-  // } else {
-  //   nowImageCount = 0
-  // }
-  // if (changeFlag == 0) {
-  //   changeFlag = 1;
-  // } else {
-  //   changeFlag = 0;
-  // }
-  //
-  // if (changeFlag == 0) {
-  //   $('#page-main').name = 'img-'+nowImageCount;
-  //   $("#page-main").className = "fadein"
-  //   $("#page-main").className = "fadeout"
-  // } else {
-  //   $('#page-main').name = 'img-'+nowImageCount;
-  //   $("#page-main").className = "fadeout"
-  //   $("#page-main").className = "fadein"
-  // }
-
-  // if(!$('.background-image.img-1').hasClass('none')){
-  //   $('.background-image.img-1').addClass('img-fade-in');
-  //   $('.background-image.img-2').removeClass('none');
-  // }else if(!$('.background-image.img-2').hasClass('none')){
-  //   $('.background-image.img-2').addClass('img-fade-in');
-  //   $('.background-image.img-1').removeClass('none');
-  // }
-  setTimeout(() =>slideShow(), 3000); // 4秒周期に画像を更新する
 };

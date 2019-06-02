@@ -1,9 +1,9 @@
 jQuery(document).ready(function($){
 	//cache some jQuery objects
-	var modalTrigger = $('.cd-modal-trigger'),
+	var modalTrigger = $('.cd-modal-trigger.profile'),
 		transitionLayer = $('.cd-transition-layer'),
 		transitionBackground = transitionLayer.children(),
-		modalWindow = $('.cd-modal');
+		modalWindow = $('.cd-modal.profile');
 
 	var frameProportion = 1.78, //png frame aspect ratio
 		frames = 25, //number of png frames
@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 	});
 
 	//open modal window
-	modalTrigger.on('click', function(event){	
+	modalTrigger.on('click', function(event){
 		event.preventDefault();
 		transitionLayer.addClass('visible opening');
 		var delay = ( $('.no-cssanimations').length > 0 ) ? 0 : 600;
