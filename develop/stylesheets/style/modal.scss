@@ -1,6 +1,10 @@
+.cd-modal{
+	display: flex;
+	align-items: center;
+}
 .modal-content {
 	@extend .flexible-center-start;
-
+	height: auto !important;
 	.modal-wrap {
 		width: 97%;
 		background-color: rgba(#2a2a2a, 0.91);
