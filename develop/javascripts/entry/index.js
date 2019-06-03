@@ -128,7 +128,7 @@ let modalTriggerProfile = $('.cd-modal-trigger.profile'),
   transitionLayer = $('.cd-transition-layer'),
   transitionBackground = transitionLayer.children(),
   modalWindowProfile = $('.cd-modal.profile'),
-  modalWindowSpeciality= $('.cd-modal.speciality'),
+  modalWindowSpeciality = $('.cd-modal.speciality'),
   modalWindowPhotographs = $('.cd-modal.photographs');
 
 let frameProportion = 1.78, //png frame aspect ratio
@@ -197,6 +197,7 @@ modalWindowPhotographs.on('click', '.modal-close', function(event) {
     transitionBackground.off('webkitAnimationEnd oanimationend msAnimationEnd animationend');
   });
 });
+
 function setLayerDimensions() {
   let windowWidth = $(window).width(),
     windowHeight = $(window).height(),
@@ -217,3 +218,10 @@ function setLayerDimensions() {
 
   resize = false;
 };
+
+$('.link.web').on('click', function(event) {
+  window.open('http://www.kakehashix84.com/')
+})
+$('.link.video').on('click', function(event) {
+  window.open('https://www.youtube.com/watch?v=TyuOkobJHOw')
+})

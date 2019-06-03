@@ -1,15 +1,15 @@
-#profile-content{
-	.modal-main{
-    display: flex;
-		.profile-image{
+#profile-content {
+	.modal-main {
+		.profile-image {
 			width: 340px;
-      height: 280px;
-			background: url('../images/profile/profile.jpg');
+			height: 280px;
+			background: url("../images/profile/profile.jpg");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
 		}
-		.profile-main{
+
+		.profile-main {
 			white-space: pre-line;
 			padding-left: 30px;
 			font-size: 15px;

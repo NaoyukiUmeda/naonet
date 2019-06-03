@@ -1,11 +1,25 @@
-.cd-modal{
+.cd-modal {
 	display: flex;
 	align-items: center;
+	&.speciality{
+		overflow: scroll !important;
+	}
 }
+
 .modal-content {
 	@extend .flexible-center-start;
 	height: auto !important;
 	font-size: 15px;
+
+	&.speciality {
+		position: absolute;
+		top: 0;
+	}
+
+	.modal-main {
+		display: flex;
+	}
+
 	.modal-wrap {
 		width: 97%;
 		background-color: rgba(#2a2a2a, 0.91);
@@ -14,12 +28,13 @@
 		.modal-header {
 			font-size: 30px;
 			padding-left: 30px;
-	    margin: 15px 0 15px;
-	    border-bottom: 1px solid;
+			margin: 15px 0;
+			border-bottom: 1px solid;
 		}
 	}
 }
 
 .modal-close {
 	cursor: pointer;
+	position: fixed;
 }
