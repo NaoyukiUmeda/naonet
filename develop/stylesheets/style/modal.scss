@@ -1,16 +1,20 @@
-
-.modal-content{
+.modal-content {
 	@extend .flexible-center-start;
-	.modal-wrap{
-		width: 1000px;
-		background-color: rgba(#2a2a2a, 0.72);
-		.modal-header{
-			font-size: 25px;
-		  padding-left: 30px;
+
+	.modal-wrap {
+		width: 97%;
+		background-color: rgba(#2a2a2a, 0.91);
+		padding: 10px;
+
+		.modal-header {
+			font-size: 30px;
+			padding-left: 30px;
+	    margin: 15px 0 15px;
+	    border-bottom: 1px solid;
 		}
-	
 	}
 }
-.modal-close{
+
+.modal-close {
 	cursor: pointer;
 }
