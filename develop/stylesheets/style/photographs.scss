@@ -1,7 +1,107 @@
-#profile-content{
+#photographs-content{
 	.modal-main{
-    display: flex;
-
-
+		.photographs-content{
+			display: flex;
+			flex-wrap: wrap;
+	    justify-content: space-around;
+		}
+  	.photograph-wrap{
+			background-color: #ffffff;
+			padding: 5px;
+			@extend .flexible-center-center;
+			margin-bottom: 20px;
+			.photograph-image{
+				width: 200px;
+	    	height: 134px;
+				&.img-1{
+					background: url('../images/photographs/1.jpg');
+					@extend .img-center;
+				}
+				&.img-2{
+					background: url('../images/photographs/2.jpg');
+					@extend .img-center;
+				}
+				&.img-3{
+					background: url('../images/photographs/3.jpg');
+					@extend .img-center;
+				}
+				&.img-4{
+					background: url('../images/photographs/4.jpg');
+					@extend .img-center;
+				}
+				&.img-5{
+					background: url('../images/photographs/5.jpg');
+					@extend .img-center;
+				}
+				&.img-6{
+					background: url('../images/photographs/6.jpg');
+					@extend .img-center;
+				}
+				&.img-7{
+					background: url('../images/photographs/7.jpg');
+					@extend .img-center;
+				}
+				&.img-8{
+					background: url('../images/photographs/8.jpg');
+					@extend .img-center;
+				}
+				&.img-9{
+					background: url('../images/photographs/9.jpg');
+					@extend .img-center;
+				}
+				&.img-10{
+					background: url('../images/photographs/10.jpg');
+					@extend .img-center;
+				}
+				&.img-11{
+					background: url('../images/photographs/11.jpg');
+					@extend .img-center;
+				}
+				&.img-12{
+					background: url('../images/photographs/12.jpg');
+					@extend .img-center;
+				}
+				&.img-13{
+					background: url('../images/photographs/13.jpg');
+					@extend .img-center;
+				}
+				&.img-14{
+					background: url('../images/photographs/14.jpg');
+					@extend .img-center;
+				}
+				&.img-15{
+					background: url('../images/photographs/15.jpg');
+					@extend .img-center;
+				}
+				&.img-16{
+					background: url('../images/photographs/16.jpg');
+					@extend .img-center;
+				}
+				&.img-17{
+					background: url('../images/photographs/17.jpg');
+					@extend .img-center;
+				}
+				&.img-18{
+					background: url('../images/photographs/18.jpg');
+					@extend .img-center;
+				}
+				&.img-19{
+					background: url('../images/photographs/19.jpg');
+					@extend .img-center;
+				}
+				&.img-20{
+					background: url('../images/photographs/20.jpg');
+					@extend .img-center;
+				}
+				// &.img-21{
+				// 	background: url('../images/photographs/21.jpg');
+				// 	@extend .img-center;
+				// }
+			}
+		}
 	}
+}
+.img-center{
+	background-position: center;
+	background-size: cover;
 }

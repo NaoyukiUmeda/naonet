@@ -4,6 +4,9 @@
 	&.speciality{
 		overflow: scroll !important;
 	}
+	&.photographs{
+		overflow: scroll !important;
+	}
 }
 
 .modal-content {
@@ -15,7 +18,10 @@
 		position: absolute;
 		top: 0;
 	}
-
+	&.photographs {
+		position: absolute;
+		top: 0;
+	}
 	.modal-main {
 		display: flex;
 	}
@@ -36,5 +42,5 @@
 
 .modal-close {
 	cursor: pointer;
-	position: fixed;
+	position: fixed !important;
 }
