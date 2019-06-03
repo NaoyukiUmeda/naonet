@@ -5,6 +5,7 @@
 .modal-content {
 	@extend .flexible-center-start;
 	height: auto !important;
+	font-size: 15px;
 	.modal-wrap {
 		width: 97%;
 		background-color: rgba(#2a2a2a, 0.91);
