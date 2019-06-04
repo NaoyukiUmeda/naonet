@@ -16,6 +16,10 @@ $(function() {
 });
 
 window.onload = function() {
+  let userAgent = window.navigator.userAgent.toLowerCase();
+  if (userAgent.indexOf('msie') == -1) {
+    $('#ie-modal').remove()
+  }
   stopload()
   setTimeout(function() {
     viewAnimeNameWrap()
@@ -29,9 +33,9 @@ window.onload = function() {
 };
 
 function stopload() {
-    $('#page-main').delay(800).css('display', 'flex');
-    $('#loader-bg').delay(600).fadeOut(800);
-    $('#loader').fadeOut(300);
+  $('#page-main').delay(800).css('display', 'flex');
+  $('#loader-bg').delay(600).fadeOut(800);
+  $('#loader').fadeOut(300);
 }
 
 let layer1;
@@ -55,14 +59,14 @@ layer2 = new Vivus('Layer_2', {
 });
 
 function viewAnimeNameWrap() {
-    document.querySelectorAll('.content[name="1"]').forEach((icon) => {
-      icon.classList.add('in');
+  document.querySelectorAll('.content[name="1"]').forEach((icon) => {
+    icon.classList.add('in');
   })
 }
 
 function viewAnimeIcon() {
-    document.querySelectorAll('.page-icon').forEach((icon) => {
-      icon.classList.add('moved');
+  document.querySelectorAll('.page-icon').forEach((icon) => {
+    icon.classList.add('moved');
   })
 }
 

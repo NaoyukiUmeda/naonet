@@ -1,13 +1,17 @@
+#ie-modal{
+	width:100%;
+	height: 100%;
+	background-color: #000000;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	color: white;
+}
 .cd-modal {
 	display: flex;
 	align-items: center;
+	overflow-y: scroll !important;
 
-	&.speciality{
-		overflow-y: scroll !important;
-	}
-	&.photographs{
-		overflow-y: scroll !important;
-	}
 }
 
 .modal-content {
@@ -15,16 +19,9 @@
 	height: auto !important;
 	font-size: 15px;
 	padding: 3em !important;
-
-	&.speciality {
-		position: absolute;
-		top: 0;
-	}
-
-	&.photographs {
-		position: absolute;
-		top: 0;
-	}
+	position: absolute;
+	top: 0;
+	
 
 	.modal-main {
 		display: flex;
