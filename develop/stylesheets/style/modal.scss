@@ -1,11 +1,12 @@
 .cd-modal {
 	display: flex;
 	align-items: center;
+
 	&.speciality{
-		overflow: scroll !important;
+		overflow-y: scroll !important;
 	}
 	&.photographs{
-		overflow: scroll !important;
+		overflow-y: scroll !important;
 	}
 }
 
@@ -13,15 +14,18 @@
 	@extend .flexible-center-start;
 	height: auto !important;
 	font-size: 15px;
+	padding: 3em !important;
 
 	&.speciality {
 		position: absolute;
 		top: 0;
 	}
+
 	&.photographs {
 		position: absolute;
 		top: 0;
 	}
+
 	.modal-main {
 		display: flex;
 	}
@@ -43,4 +47,7 @@
 .modal-close {
 	cursor: pointer;
 	position: fixed !important;
+}
+.cd-transition-layer{
+	overflow-y: scroll !important;
 }

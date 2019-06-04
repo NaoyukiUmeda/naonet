@@ -32,3 +32,4 @@ node_modules
 
 assets/
 src/main/resources/static/test/
+bin/

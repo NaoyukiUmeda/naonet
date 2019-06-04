@@ -6,40 +6,17 @@ import $ from 'jquery';
 let a = 10;
 let timeoutID1;
 let changeFlag = 0; {
-  // console.log(this);
   var btn = document.getElementById('page-main');
-  // btn.addEventListener('click', e => {
-  // 	call(e)
-  // }, false);
 };
 
-
-// timeoutID1 = window.setTimeout(sayBaz(), 2000);
-
-
-// const icon1 = () => {
-// 	document.querySelectorAll('.page-icon').forEach((icon) => {
-// 		icon.classList.add('moved');
-// 		icon.classList.add('spin');
-// 	});
-// };
 $(function() {
-
-  // var h = $(window).height();
-  // $('#page-main').css('display', 'none');
-  // $('#loader-bg ,#loader').height(h);
-  // setTimeout(function(){viewAnimeSvg();viewAnimeIcon();}, 1000);
   setTimeout(function() {
     stopload()
   }, 5000);
 });
 
 window.onload = function() {
-  // $('#loader-bg').delay(900).fadeOut(800);
-  // $('#loader').delay(600).fadeOut(300);
-  // $('#page-main').css('display', 'flex');
   stopload()
-
   setTimeout(function() {
     viewAnimeNameWrap()
   }, 600);
@@ -48,19 +25,7 @@ window.onload = function() {
     layer2.play(1);
     viewAnimeIcon()
   }, 2500);
-  // .then(
-  //   isAuth => {
-  //     if (isAuth) {
-  //       return viewAnimeSvg()
-  //     }
-  //   }
-  // )
-  // .then(
-  //   isAuth => {
-  //     if (isAuth) {
-  //       return viewAnimeIcon()
-  //     }
-  //   })
+
 };
 
 function stopload() {
@@ -75,13 +40,6 @@ function stopload() {
 let layer1;
 let layer2;
 
-
-// function viewAnimeSvg() {
-//   return new Promise((resolve, reject) => {
-//
-//     resolve(true);
-//   });
-// }
 layer1 = new Vivus('Layer_1', {
   duration: 100,
   start: 'manual',

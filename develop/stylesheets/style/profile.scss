@@ -1,12 +1,9 @@
 #profile-content {
 	.modal-main {
+		flex-wrap: wrap;
+
 		.profile-image {
-			width: 340px;
-			height: 280px;
-			background: url("../images/profile/profile.jpg");
-			background-position: center;
-			background-size: cover;
-			background-repeat: no-repeat;
+			padding-left: 30px;
 		}
 
 		.profile-main {

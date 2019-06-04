@@ -93,10 +93,22 @@
 					background: url('../images/photographs/20.jpg');
 					@extend .img-center;
 				}
-				// &.img-21{
-				// 	background: url('../images/photographs/21.jpg');
-				// 	@extend .img-center;
-				// }
+				&.img-21{
+					background: url('../images/photographs/21.jpg');
+					@extend .img-center;
+				}
+				&.img-22{
+					background: url('../images/photographs/22.jpg');
+					@extend .img-center;
+				}
+				&.img-23{
+					background: url('../images/photographs/23.jpg');
+					@extend .img-center;
+				}
+				&.img-24{
+					background: url('../images/photographs/24.jpg');
+					@extend .img-center;
+				}
 			}
 		}
 	}

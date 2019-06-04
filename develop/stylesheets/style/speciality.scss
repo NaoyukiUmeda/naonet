@@ -5,6 +5,7 @@
 		.speciality-content {
 			width: 100%;
 			white-space: pre-line;
+			padding-left: 30px;
 
 			.sub-label {
 				font-size: 20px;
@@ -15,13 +16,13 @@
 				margin-top: 20px;
 
 				&.web {
-					background: url("../images/speciality/web-page.png");
+					background: url("../images/speciality/web-page.PNG");
 					background-size: cover;
 					background-position: center;
 				}
 
 				&.video {
-					background: url("../images/speciality/music-video.jpg");
+					background: url("../images/speciality/music-video.JPG");
 					background-size: cover;
 					background-position: center;
 				}
