@@ -28,6 +28,7 @@
 
 	.modal-main {
 		display: flex;
+		font-size: 18px;
 	}
 
 	.modal-wrap {
@@ -36,11 +37,12 @@
 		padding: 10px;
 
 		.modal-header {
-			font-size: 30px;
+			font-size: 35px;
 			padding-left: 30px;
 			margin: 15px 0;
 			border-bottom: 1px solid;
 		}
+
 	}
 }
 

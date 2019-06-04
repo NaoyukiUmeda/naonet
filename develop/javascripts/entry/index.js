@@ -29,12 +29,9 @@ window.onload = function() {
 };
 
 function stopload() {
-  return new Promise((resolve, reject) => {
     $('#page-main').delay(800).css('display', 'flex');
     $('#loader-bg').delay(600).fadeOut(800);
     $('#loader').fadeOut(300);
-    resolve(true);
-  });
 }
 
 let layer1;
@@ -58,20 +55,14 @@ layer2 = new Vivus('Layer_2', {
 });
 
 function viewAnimeNameWrap() {
-  return new Promise((resolve, reject) => {
     document.querySelectorAll('.content[name="1"]').forEach((icon) => {
       icon.classList.add('in');
-    });
-    resolve(true);
   })
 }
 
 function viewAnimeIcon() {
-  return new Promise((resolve, reject) => {
     document.querySelectorAll('.page-icon').forEach((icon) => {
       icon.classList.add('moved');
-    });
-    resolve(true);
   })
 }
 
